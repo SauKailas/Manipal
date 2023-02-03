@@ -48,6 +48,9 @@ int main()
 	scanf("%d", &edg);
 
 	int mat[vert][vert], adj;
+	for(int i=0; i<vert; i++)
+		for(int j=0; j<vert; j++)
+			mat[i][j]=0;
 
 	printf("\nSuppose the vertices are numbered from 1 to %d.\n", vert);
 	for(int i=0; i<edg; i++)
@@ -59,11 +62,6 @@ int main()
 		mat[first-1][second-1]=1;
 		mat[second-1][first-1]=1;
 	}
-	
-	for(int i=0; i<vert; i++)
-		for(int j=0; j<vert; j++)
-			if(mat[i][j]!=1)
-				mat[i][j]=0;
 	
 	printf("\nAdjacency Matrix:\n");
 	for(int i=0; i<vert; i++)
