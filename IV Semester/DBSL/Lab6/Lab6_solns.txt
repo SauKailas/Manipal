@@ -1,0 +1,218 @@
+create table StudentTable(
+  RollNo number(5),
+  GPA numeric(3, 2));
+  
+insert into StudentTable values(1, 5.8);
+insert into StudentTable values(2, 6.5);
+insert into StudentTable values(3, 3.4);
+insert into StudentTable values(4, 7.8);
+insert into StudentTable values(5, 9.5);
+
+
+1.
+declare 
+	GPA1 numeric(3, 2);
+begin
+	select GPA into GPA1 from StudentTable where RollNo=1;
+    dbms_output.put_line('GPA:'||GPA1);
+end;
+
+2.
+declare
+    GPA1 numeric(3, 2);
+begin
+	select GPA into GPA1 from StudentTable where RollNo=5;
+	IF GPA1>9 THEN
+		DBMS_OUTPUT.PUT_LINE('A+');
+	ELSIF GPA1<9 AND GPA1>8 THEN
+		DBMS_OUTPUT.PUT_LINE('A');
+	ELSIF GPA1<8 AND GPA1>7 THEN
+		DBMS_OUTPUT.PUT_LINE('B');
+	ELSIF GPA1<7 AND GPA1>6 THEN
+		DBMS_OUTPUT.PUT_LINE('C');
+	ELSIF GPA1<6 AND GPA1>5 THEN
+		DBMS_OUTPUT.PUT_LINE('D');
+	ELSIF GPA1<5 AND GPA1>4 THEN
+		DBMS_OUTPUT.PUT_LINE('E');
+	ELSE
+		DBMS_OUTPUT.PUT_LINE('F');
+	END IF;
+END;
+
+3.
+DECLARE
+	ISSUE_DATE date:='29-mar-2003';
+	RETURN_DATE date:='29-may-2003';
+	days number(3);
+BEGIN
+	days:=RETURN_DATE-ISSUE_DATE;
+	IF days<=7 THEN
+		dbms_output.put_line('Fine=' ||0);
+	ELSIF days>7 AND days<=15 THEN
+		dbms_output.put_line('Fine=' ||(days-7));
+	ELSIF days>15 AND days<=30 THEN
+		dbms_output.put_line('Fine=' ||(8+(days-15)*2));
+	ELSE
+		dbms_output.put_line('Fine=' ||(38+(days-30)*5));
+	END IF;
+END;
+
+4.
+declare
+    GPA1 numeric(3, 2);
+	i integer:=1;
+begin
+LOOP
+	select GPA into GPA1 from StudentTable where RollNo=i;
+	IF GPA1>9 THEN
+		DBMS_OUTPUT.PUT_LINE('A+');
+	ELSIF GPA1<9 AND GPA1>8 THEN
+		DBMS_OUTPUT.PUT_LINE('A');
+	ELSIF GPA1<8 AND GPA1>7 THEN
+		DBMS_OUTPUT.PUT_LINE('B');
+	ELSIF GPA1<7 AND GPA1>6 THEN
+		DBMS_OUTPUT.PUT_LINE('C');
+	ELSIF GPA1<6 AND GPA1>5 THEN
+		DBMS_OUTPUT.PUT_LINE('D');
+	ELSIF GPA1<5 AND GPA1>4 THEN
+		DBMS_OUTPUT.PUT_LINE('E');
+	ELSE
+		DBMS_OUTPUT.PUT_LINE('F');
+	END IF;
+	i:=i+1;
+	IF i>5 THEN EXIT;
+	END IF;
+END LOOP;
+END;
+
+5.
+alter table StudentTable add LetterGrade varchar(2);
+
+DECLARE
+    GRADE VARCHAR(2);
+    GPA1 NUMERIC(3,2);
+	i INTEGER:=1;
+BEGIN
+	WHILE i<=5 LOOP
+		select GPA into GPA1 from StudentTable where RollNo=i;
+
+		IF GPA1<=4 THEN
+			GRADE:='F';
+		ELSIF GPA1>4 AND GPA1<=5 THEN
+			GRADE:='E';
+		ELSIF GPA1>5 AND GPA1<=6 THEN
+			GRADE:='D';
+		ELSIF GPA1>6 AND GPA1<=7 THEN
+			GRADE:='C';
+		ELSIF GPA1>7 AND GPA1<=8 THEN
+			GRADE:='B';
+		ELSIF GPA1>8 AND GPA1<=9 THEN
+			GRADE:='A';
+		ELSE
+			GRADE:='A+';
+		END IF;
+		update StudentTable set LetterGrade=GRADE where RollNo=i;
+		i:=i+1;
+	END LOOP;
+END;
+
+6.
+DECLARE
+	TEMP StudentTable.GPA%TYPE:=0;
+	MAX_SCORE StudentTable.GPA%TYPE:=0;
+	MAX_ROLL StudentTable.RollNo%TYPE:=0;
+BEGIN
+	for i in 1..5 LOOP
+		select GPA into TEMP from StudentTable where RollNo=i;
+		IF TEMP>MAX_SCORE THEN
+			MAX_SCORE:=TEMP;
+			MAX_ROLL:=i;
+		END IF;
+	END LOOP;
+	DBMS_OUTPUT.PUT_LINE('Maximum Grade is ' ||MAX_SCORE|| ' scored by RollNo: '||MAX_ROLL);
+END;
+
+7.
+declare
+    GPA1 numeric(3, 2);
+	i integer:=1;
+begin
+<<UP>>
+	select GPA into GPA1 from StudentTable where RollNo=i;
+	IF GPA1>9 THEN
+		DBMS_OUTPUT.PUT_LINE('A+');
+	ELSIF GPA1<9 AND GPA1>8 THEN
+		DBMS_OUTPUT.PUT_LINE('A');
+	ELSIF GPA1<8 AND GPA1>7 THEN
+		DBMS_OUTPUT.PUT_LINE('B');
+	ELSIF GPA1<7 AND GPA1>6 THEN
+		DBMS_OUTPUT.PUT_LINE('C');
+	ELSIF GPA1<6 AND GPA1>5 THEN
+		DBMS_OUTPUT.PUT_LINE('D');
+	ELSIF GPA1<5 AND GPA1>4 THEN
+		DBMS_OUTPUT.PUT_LINE('E');
+	ELSE
+		DBMS_OUTPUT.PUT_LINE('F');
+	END IF;
+	i:=i+1;
+	IF i<6 THEN GOTO UP;
+	END IF;
+END;
+
+8.
+DECLARE
+	INPUT_NAME varchar(20):='Srinivasan';
+	COUNT_INST integer;
+	MULTIPLE_INST exception;
+	NO_INST exception;
+	DETAILS Instructor%ROWTYPE;
+BEGIN
+	select count(*) into COUNT_INST from Instructor where name=INPUT_NAME;
+	IF COUNT_INST<1 THEN raise NO_INST;
+	ELSIF COUNT_INST>2 THEN raise MULTIPLE_INST;	
+	ELSE
+	select * into DETAILS from Instructor where name=INPUT_NAME;
+	DBMS_OUTPUT.PUT_LINE(DETAILS.ID || ' ' || DETAILS.NAME || ' ' || DETAILS.DEPT_NAME || ' ' || DETAILS.SALARY);
+	END IF;
+
+	EXCEPTION
+		WHEN NO_INST THEN
+			DBMS_OUTPUT.PUT_LINE('No Instructor Found!');
+		WHEN MULTIPLE_INST THEN
+			DBMS_OUTPUT.PUT_LINE('Multiple Instructors Found!');
+END;
+
+9.
+DECLARE
+    GRADE VARCHAR(2);
+    GPA1 NUMERIC(3,2);
+	i INTEGER:=1;
+	INCORRECT_EXCEPTION EXCEPTION;
+BEGIN
+	WHILE i<=5 LOOP
+		select GPA into GPA1 from StudentTable where RollNo=i;
+
+		IF GPA1<0 OR GPA1>10 THEN
+            raise INCORRECT_EXCEPTION;
+		ELSIF GPA1<=4 THEN
+			GRADE:='F';
+		ELSIF GPA1>4 AND GPA1<=5 THEN
+			GRADE:='E';
+		ELSIF GPA1>5 AND GPA1<=6 THEN
+			GRADE:='D';
+		ELSIF GPA1>6 AND GPA1<=7 THEN
+			GRADE:='C';
+		ELSIF GPA1>7 AND GPA1<=8 THEN
+			GRADE:='B';
+		ELSIF GPA1>8 AND GPA1<=9 THEN
+			GRADE:='A';
+		ELSE
+			GRADE:='A+';
+		END IF;
+		update StudentTable set LetterGrade=GRADE where RollNo=i;
+		i:=i+1;
+	END LOOP;
+	EXCEPTION
+        WHEN INCORRECT_EXCEPTION THEN
+        	DBMS_OUTPUT.PUT_LINE('GPA out of Range!');
+END;
