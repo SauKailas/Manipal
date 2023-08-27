@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	FILE *fptr;
+	char filename[100], c;
+
+	printf("Enter the filename to open for reading:\n"); # Comment
