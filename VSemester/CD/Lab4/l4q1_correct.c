@@ -1,4 +1,5 @@
-// Construction of token generator. Each token has row number, column number, and token type.
+// Construction of a Lexical Analyser to implement a symbol table.
+// Symbol Table needs to have: S. No, Lexeme Name, Data Type, Token Type, Return Type, and No. Args.
 
 #include<stdio.h>
 #include<stdlib.h>
