@@ -1,0 +1,10 @@
+Hello
+I am Saurabh Kailas
+My name is Saurabh
+Surname is Kailas
+
+O_CREAT, S_IRUSR|S_IWUSR
+O_CREAT, S_IRUSR|S_IWUSR
+
+Saurabh
+It is me Mario
