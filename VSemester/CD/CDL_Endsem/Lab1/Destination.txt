@@ -1,0 +1,39 @@
+}
+;0 nruter    
+
+;)rtpf(esolcf    
+
+;)tnuoc_rahc ,"n\d% :tnuoC retcarahC"(ftnirp    
+;)tnuoc_enil ,"n\d% :tnuoC eniL"(ftnirp    
+
+}    
+;)rtpf(ctegf = c        
+;++tnuoc_rahc            
+esle        
+;++tnuoc_enil            
+)'n\' == c(fi        
+{    
+)FOE =! c(elihw    
+
+;)rtpf(ctegf = c    
+
+;0 = tnuoc_rahc ,1 = tnuoc_enil tni    
+
+}    
+;)0(tixe        
+;)"n\!elif nepo tonnaC"(ftnirp        
+{    
+)LLUN == rtpf(fi    
+
+;)"r" ,emanelif(nepof = rtpf    
+
+;)emanelif ,"s%"(fnacs    
+ ;)"n\:gnidaer rof nepo ot emanelif eht retnE"(ftnirp    
+
+;c rahc    
+;]001[emanelif rahc    
+;rtpf*                ELIF    
+{
+saliaK               hbaruaS // )(niam tni
+
+.elif a ni sretcarahc dna senil fo rebmun eht tnuoC //
