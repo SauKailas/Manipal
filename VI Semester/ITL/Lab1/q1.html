@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>Question 1 of Lab 1</title>
+		<script type="text/javascript" src="jquery-3.7.1.js"></script>
+		<script type="text/javascript" language="javascript">
+			$(document).ready(function () {
+				let n=1;
+				let location=0;
+				$("tr").each(function () {
+					if(n%2 == 0)
+						$(this).css("background-color", "red")
+					else
+						$(this).css("background-color", "orange")
+					n+=1;
+				})
+				$("#ShiftButton").bind("click", function () {
+					if(location%2 == 0)
+					{
+						$("#Table").css("left", "");
+						$("#Table").animate({right : '10px'}, 0);
+						$("#Image").css("left", "");
+						$("#Image").animate({right : '10px'}, 0);
+					}
+					else
+					{
+						$("#Table").css("right", "");
+						$("#Table").animate({left : '10px'}, 0);
+						$("#Image").css("right", "");
+						$("#Image").animate({left : '10px'}, 0);
+					}
+					location+=1;
+				})
+			});
+		</script>
+	    <style type="text/css">
+	        table, td {
+	            border: 1px solid black;
+	        }
+	        td {
+	            padding: 1rem;
+	        }
+	        #btn1 {
+	            padding: 1rem;
+	            margin: 1rem 0;
+	            display: block;
+	        }
+	    </style>
+	</head>
+	<body>
+		<button id="ShiftButton">
+			Shift
+		</button>
+		<br><br><br><br>
+		<div id="Table" style="position: absolute;">
+			<table>
+				<tr>
+					<td>Saurabh</td>
+					<td>Saurav</td>
+					<td>Raja</td>
+				</tr>
+				<tr>
+					<td>Varun</td>
+					<td>Athul</td>
+					<td>Joshvir</td>
+				</tr>
+				<tr>
+					<td>Suhas</td>
+					<td>Aditya</td>
+					<td>Eswar</td>
+				</tr>
+			</table>
+			<br><br>
+			<img id="Image" width="200px" src="https://th.bing.com/th/id/R.4ea09ba2f98b50bcb6a3e6a41228e23c?rik=SE%2bWLxSCvy%2b%2fXQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-smiling-face-smiley-png-3896.png&ehk=ehhp4tikofs%2bKrhhZyjeE4KYEIBls%2fZMPPvDkgpflzs%3d&risl=&pid=ImgRaw&r=0">
+		</div>
+	</body>
+</html>
+
