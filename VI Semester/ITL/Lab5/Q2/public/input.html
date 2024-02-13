@@ -1,0 +1,22 @@
+<h1>Employee</h1>
+<form action = "employee" method = "POST">
+    {% csrf_token %}
+    Enter Joining Day: <input type="text" name="day" placeholder="DAY">
+    Enter Joining Month: <input type="text" name="month" placeholder="MONTH">
+    Enter Joining Year: <input type="text" name="year" aria-placeholder="YEAR">
+    <br><br>
+    Select ID:<br>
+    <select name="id">
+        <option value="12">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="12">16</option>
+        <option value="12">17</option>
+        <option value="12">18</option>
+        <option value="12">19</option>
+    </select>
+    <br><br>
+    <input type="submit">
+</form>
