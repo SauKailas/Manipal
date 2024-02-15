@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Question 1 of Lab 1</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" language="javascript">
+			$(document).ready(
+				function () {
+					let n = 1;
+					let location = 0;
+					$("tr").each(
+						function () {
+							if (n % 2 == 0)
+								$(this).css("background-color", "red");
+							else
+								$(this).css("background-color", "green");
+							n += 1;
+						})
+					$("#btn1").bind("click",
+						function () {
+							if (location == 0)
+							{
+								$("#move-elem").css("left", "");
+								$("#move-elem").animate({right: '10px'}, 0);
+								location = 1;
+							}
+							else
+							{
+								$("#move-elem").css("right", "");
+								$("#move-elem").animate({left: '10px'}, 0);
+								location = 0;
+							}
+						})
+				})
+		</script>
+	</head>
+	<body>
+		<button id="btn1">
+			Move Table
+		</button>
+		<div id="move-elem" style="position: absolute;">
+			<table>
+				<tr>
+					<td>Saurabh</td>
+					<td>Kailas</td>
+					<td>India</td>
+				</tr>
+				<tr>
+					<td>Lionel</td>
+					<td>Messi</td>
+					<td>Argentina</td>
+				</tr>
+				<tr>
+					<td>Cristiano</td>
+					<td>Ronaldo</td>
+					<td>Portugal</td>
+				</tr>
+			</table>
+			<img id="img1" width="200px" src="https://th.bing.com/th/id/R.4ea09ba2f98b50bcb6a3e6a41228e23c?rik=SE%2bWLxSCvy%2b%2fXQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-smiling-face-smiley-png-3896.png&ehk=ehhp4tikofs%2bKrhhZyjeE4KYEIBls%2fZMPPvDkgpflzs%3d&risl=&pid=ImgRaw&r=0">
+		</div>
+	</body>
+</html>

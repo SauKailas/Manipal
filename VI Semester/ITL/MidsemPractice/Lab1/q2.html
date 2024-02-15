@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<title>Question 2 of Lab 1</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" language="javascript">
+			$(document).ready(function() {
+				let resultBox = $("#resultBox");
+				let n1 = 0, n2 = 0, val = 0, inputval = 0, text = "", operator = "";
+				$("input[type=button").bind("click",
+					function() {
+						let buttonVal = $(this).val();
+						if(buttonVal == 'C')
+						{
+							inputval = 0;
+							resultBox.html(inputval);
+						}
+						else if(buttonVal >= "0" && buttonVal <= "9")
+						{
+							inputval = inputval * 10 + parseInt(buttonVal);
+							text = text + inputval;
+							resultBox.html(text);
+						}
+						else if(buttonVal == "+" || buttonVal == "-" || buttonVal == "*" || buttonVal == "/")
+						{
+							operator = buttonVal;
+							val = inputval;
+							inputval = 0;
+							text = val + operator;
+							resultBox.html(text)
+						}
+						else
+						{
+							if(operator == "+")
+								val += inputval;
+							else if(operator == "-")
+								val -= inputval;
+							else if(operator == "*")
+								val *= inputval;
+							else
+								val /= inputval;
+							text = text + inputval + "=" + val;
+							inputval = val;
+							resultBox.html(val);
+							text = "";
+						}
+					})
+			})
+		</script>
+		    <style type="text/css">
+	        table { 
+	            border: 1px solid black; 
+	            margin: 2rem; 
+	        }
+	        input[type="button"] { 
+	            width: 100%;
+	            padding: 1rem; 
+	            background-color: black;
+	            color: white; 
+	            border: none; 
+	            border-radius: 5px; 
+	        }
+	        input[type="button"]:hover {
+	            background-color: gray;
+	        }
+	        #resultBox { 
+	            padding: 1rem; 
+	            border: 1px solid black;
+	            border-radius: 5px;
+	            width: 10rem;
+	        } 
+	    </style>
+	</head>
+	<body>
+		<table id="calculator">
+			<tr>
+				<td colspan="3">
+					<div id="resultBox"></div>
+				</td>
+				<td><input type="button" value="C"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1"></td>
+				<td><input type="button" value="2"></td>
+				<td><input type="button" value="3"></td>
+				<td><input type="button" value="/"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4"></td>
+				<td><input type="button" value="5"></td>
+				<td><input type="button" value="6"></td>
+				<td><input type="button" value="*"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="7"></td>
+				<td><input type="button" value="8"></td>
+				<td><input type="button" value="9"></td>
+				<td><input type="button" value="-"></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="button" value="0">
+				</td>
+				<td><input type="button" value="="></td>
+				<td><input type="button" value="+"></td>
+			</tr>
+		</table>
+	</body>
+</html>

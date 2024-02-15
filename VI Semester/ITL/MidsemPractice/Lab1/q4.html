@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>Question 4 of Lab 1</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" language="javascript">
+			$(document).ready(
+				function() {
+					$("#bill-btn").bind("click", 
+						function() {
+							let company = $("#company-name").val()
+							let items = [];
+							$("input[type=checkbox]").each(
+								function() {
+									if($(this).is(':checked'))
+										items.push($(this).val());
+								})
+							let quantity = $("#quantity").val();
+							let price = 2000 * parseInt(quantity);
+							let bill = "Company: " + company + "\n";
+							bill += "Items: " + items.join(", ") + "\n";
+							bill += "Quantity: " + quantity + "\n";
+							bill += "Price: " + price + "\n";
+							alert(bill);
+						})
+				})
+		</script>
+	</head>
+	<body>
+		<label for="company-name">Select a Company:</label>
+		<select name="company-name" id="company-name">
+			<option value="HP">HP</option>
+			<option value="Nokia">Nokia</option>
+			<option value="Samsung">Samsung</option>
+			<option value="Motorola">Motorola</option>
+			<option value="Apple">Apple</option>
+		</select>
+		<br><br>
+		<input type="checkbox" value="Mobile" id="Mobile">
+		<label for="mobile">Mobile</label>
+		<br>
+		<input type="checkbox" value="Laptop" id="Laptop">
+		<label for="laptop">Laptop</label>
+		<br><br>
+		<label for="quantity">Enter Quantity:</label>
+		<input type="text" id="quantity" placeholder="Units">
+		<br><br>
+		<button id="bill-btn">Produce Bill</button>
+	</body>
+</html>
