@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Student Bio Data Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body class="container bg-dark text-white"></body>
+    <br>
+    <h1>Student Bio Data Form</h1>
+    <br>
+    <form>
+        <div class="form group">
+            <label for="name" id="name">Enter Name:</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="email" id="email">Enter Email:</label>
+            <input type="text" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="form-check">
+                <input type="radio" id="Male" name="Male">
+                <label for="Male">Male</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="Female" name="Female">
+                <label for="Female">Female</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Interests:</label>
+            <div class="form-check">
+                <input type="checkbox" id="Arts" name="Arts">
+                <label for="Arts">Arts</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="Sports" name="Sports">
+                <label for="Sports">Sports</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="Books" name="Books">
+                <label for="Books">Books</label>
+            </div>
+        </div>
+        <h2>Previous Education Details</h2>
+        <table class="table table-bordered text-white">
+            <thead>
+                <tr>
+                    <td>College</td>
+                    <td>Year</td>
+                    <td>Marks</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" id="college1" class="form-control" placeholder="College 1"></td>
+                    <td><input type="text" id="year1" class="form-control" placeholder="Year 1"></td>
+                    <td><input type="text" id="grade1" class="form-control" placeholder="Grade 1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="college2" class="form-control" placeholder="College2"></td>
+                    <td><input type="text" id="year2" class="form-control" placeholder="Year 2"></td>
+                    <td><input type="text" id="grade2" class="form-control" placeholder="Grade 2"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="primary btn-primary">Submit</button>
+    </form>
+</html>
