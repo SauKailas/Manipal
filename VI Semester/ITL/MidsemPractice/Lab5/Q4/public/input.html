@@ -1,0 +1,10 @@
+<h1>Gradesheet</h1>
+<form action="marks" method="POST">
+    {% csrf_token %}
+    Enter Maths Marks: <input type="text" name="maths" placeholder = "MATHS"><br><br>
+    Enter Physics Marks: <input type="text" name="physics" placeholder = "PHYSICS"><br><br>
+    Enter Chemistry Marks: <input type="text" name="chemistry" placeholder = "CHEMISTRY"><br><br>
+    Enter History Marks: <input type="text" name="history" placeholder = "HISTORY"><br><br>
+    Enter Geography Marks: <input type="text" name="geography" placeholder = "GEOGRAPHY"><br><br>
+    <input type="submit">
+</form>
