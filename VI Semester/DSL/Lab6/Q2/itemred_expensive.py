@@ -1,0 +1,21 @@
+import sys
+
+max_value = 0
+old_key = None
+
+print("Location\tMax. Cost Purchase:")
+for line in sys.stdin:
+    data = line.strip().split("\t")
+    if len(data) != 2:
+        continue
+    current_key, current_value = data
+    if old_key and old_key != current_key:
+        print(old_key, "\t\t", max_value)
+        old_key = current_key
+        max_value = 0
+    old_key = current_key
+    if float(current_value) > float(max_value):
+        max_value = float(current_value)
+
+if old_key is not None:
+    print(old_key, "\t\t", max_value)
