@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <form action="logout" method="POST">
+            {%csrf_token%}
+            You are : <strong>{{username}}</strong>
+            <br><br>
+            Your number is : <strong>{{contact}}</strong>
+            <br><br>
+            <input type="submit" value="LOGOUT">
+        </form>
+    </body>
+</html>

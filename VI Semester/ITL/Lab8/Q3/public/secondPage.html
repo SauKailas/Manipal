@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <form action="secondpage" method="POST">
+            {%csrf_token%}
+            Name : {{name}}
+            <br><br>
+            Roll Number : {{roll}}
+            <br><br>
+            Subject : {{subject}}
+            <br><br>
+            <input type="submit" value="SUBMIT">
+        </form>
+    </body>
+</html>
