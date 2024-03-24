@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1 Lab 10</title>
+</head>
+<body>
+    <form action="firstPage" method="post">
+        {%csrf_token%}
+        {{worksForm.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    <br> <br>
+    <form action="secondPage" method="post">
+        {%csrf_token%}
+        {{livesForm.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    <br> <br>
+    <hr>
+    <h2>Retrieve People by Company</h2>
+    <form action="findPeople" method="post">
+        {% csrf_token %}
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" name="companyName">
+        <input type="submit" value="Retrieve">
+    </form>
+</body>
+</html>

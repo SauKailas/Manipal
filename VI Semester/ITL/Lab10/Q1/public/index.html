@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1 Lab 10</title>
+</head>
+<body>
+    <form action="firstPage" method="post">
+        {%csrf_token%}
+        {{catForm.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    <br> <br>
+    <form action="secondPage" method="post">
+        {%csrf_token%}
+        {{pageForm.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    <br> <br>
+    <hr>
+    <b><h2>Categories</h2></b>
+    {% for c in Categories %}
+    <p>{{c.catName}} (Visits : {{c.numVisits}}) (Likes : {{c.numLikes}})</p>
+    {% endfor %}
+    <br> <br>
+    <hr>
+    <b><h2>Pages</h2></b>
+    {% for p in Pages %}
+    <p>{{p.pageTitle}} (Views : {{p.numViews}}) (URL : {{p.pageURL|urlize}})</p>
+    {% endfor %}
+</body>
+</html>
