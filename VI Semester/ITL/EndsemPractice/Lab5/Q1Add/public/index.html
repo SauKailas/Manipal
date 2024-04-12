@@ -1,0 +1,11 @@
+<h1>Enter Captcha:</h1>
+<br>
+
+<form method="POST" action="generate_captcha">
+    {% csrf_token %}
+    <input type="hidden" name="captcha" value="{{ captcha }}">
+    Captcha text : <span id="captcha">{{ captcha }}</span><br>
+    <br><br>
+    <input type="text" placeholder="Enter captcha" name="user_input">
+    <button type="submit">Submit</button>
+</form>
