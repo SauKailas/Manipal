@@ -1,0 +1,23 @@
+<h1>Products</h1>
+
+<form method="POST" action="insert">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+
+<h2>Existing Products</h2>
+<table style="border-collapse: collapse; border-style: 1px solid black;">
+    <tr>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Description</th>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>{{product.title}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.description}}</td>
+    </tr>
+    {% endfor %}
+</table>

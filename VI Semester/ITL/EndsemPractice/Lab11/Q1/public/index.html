@@ -1,0 +1,70 @@
+<h1>Library Portal</h1>
+
+<form method="POST" action="insert_author">
+    {% csrf_token %}
+    {{authorForm.as_p}}
+    <input type="submit">
+</form>
+
+<form method="POST" action="insert_publisher">
+    {% csrf_token %}
+    {{publisherForm.as_p}}
+    <input type="submit">
+</form>
+
+<form method="POST" action="insert_book">
+    {% csrf_token %}
+    {{bookForm.as_p}}
+    <input type="submit">
+</form>
+
+<h2>Existing Details</h2>
+
+<table style="border-collapse: collapse; border: 1px solid black">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </tr>
+    {% for author in authors %}
+    <tr>
+        <td>{{author.fname}}</td>
+        <td>{{author.lname}}</td>
+        <td>{{author.email}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br><br>
+<table style="border-collapse: collapse; border: 1px solid black">
+    <tr>
+        <th>Publisher Name</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Website</th>
+    </tr>
+    {% for publisher in publishers %}
+    <tr>
+        <td>{{publisher.pname}}</td>
+        <td>{{publisher.street}}</td>
+        <td>{{publisher.city}}</td>
+        <td>{{publisher.state}}</td>
+        <td>{{publisher.country}}</td>
+        <td>{{publisher.website}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br><br>
+<table style="border-collapse: collapse; border: 1px solid black">
+    <tr>
+        <th>Title</th>
+        <th>Publication Date</th>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{book.title}}</td>
+        <td>{{book.publication}}</td>
+    </tr>
+    {% endfor %}
+</table>
