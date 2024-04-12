@@ -1,0 +1,9 @@
+<h1>Course Feedback Form</h1>
+
+<form method="POST" action="display">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="Submit">
+</form>
+
+Thanks {{prefix}} {{name}} for your feedback!
