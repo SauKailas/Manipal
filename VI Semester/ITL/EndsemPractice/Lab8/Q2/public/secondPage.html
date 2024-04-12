@@ -1,0 +1,12 @@
+<h2>Second Page</h2>
+
+<form method="POST" action="firstpage">
+    {% csrf_token %}
+    Name : {{context.name}}
+    <br>
+    Roll Number : {{context.roll}}
+    <br>
+    Subject : {{context.subject}}
+    <br><br>
+    <input type="submit">
+</form>

@@ -1,0 +1,20 @@
+<h1>Grocery Items</h1>
+
+<form method="POST" action="print_items">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+
+<table style="border-collapse : collapse; border : 1px solid black;">
+    <tr>
+        <th>Item Name</th>
+        <th>Item Price</th>
+    </tr>
+    {% for item, price in selected_items %}
+    <tr>
+        <td>{{item}}</td>
+        <td>{{price}}</td>
+    </tr>
+    {% endfor %}
+</table>

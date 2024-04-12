@@ -1,0 +1,6 @@
+<h1>Enter Car Details</h1>
+<form method="POST" action="display_details">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
