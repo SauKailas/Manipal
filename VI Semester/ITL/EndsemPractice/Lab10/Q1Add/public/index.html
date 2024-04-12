@@ -1,0 +1,18 @@
+<h1>Institute Details</h1>
+
+<form method="POST" action="register">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+
+<table style="border-collapse : collapse; border: 1px solid black">
+    <tr>
+        <th>Institute Name</th>
+    </tr>
+    {% for institute in institutes %}
+    <tr>
+        <td>{{institute.name}}</td>
+    </tr>
+    {% endfor %}
+</table>

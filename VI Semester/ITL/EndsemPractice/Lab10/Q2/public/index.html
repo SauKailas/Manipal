@@ -1,0 +1,13 @@
+<h1>Employee Details</h1>
+
+<form method="POST" action="insert_works">
+    {% csrf_token %}
+    {{worksForm.as_p}}
+    <input type="submit">
+</form>
+
+<form method="POST" action="insert_lives">
+    {% csrf_token %}
+    {{livesForm.as_p}}
+    <input type="submit">
+</form>
