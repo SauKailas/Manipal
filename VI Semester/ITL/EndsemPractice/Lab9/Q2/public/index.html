@@ -1,0 +1,11 @@
+<h1>Voting Page</h1>
+
+<form method="POST" action="voting">
+    {% csrf_token %}
+    How is the book ASP.NET with C# by Vipul Prakashan?
+    <br>
+    <input type="radio" name="vote" value="good">Good   <p>[{{context.per_good}}]</p>
+    <input type="radio" name="vote" value="satisfactory">Satisfactory   <p>[{{context.per_satis}}]</p>
+    <input type="radio" name="vote" value="bad">Bad   <p>[{{context.per_bad}}]</p>
+    <input type="submit" value="Vote">
+</form>
