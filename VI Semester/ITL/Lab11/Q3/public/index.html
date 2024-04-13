@@ -1,0 +1,28 @@
+<form method="POST" action="update">
+    {% csrf_token %}
+    <select name="human_id" id="human-id">
+        {% for human in humans %}
+            <option value="{{ human.id }}">{{ human.fname }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+    {% for field in form %}
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        <br>
+    {% endfor %}
+    <input type="submit" value="Update">
+</form>
+<form id="delete-form" method="POST" action="">
+    {% csrf_token %}
+    <input type="hidden" name="human_id" id="delete-human-id">
+    <button type="submit">Delete</button>
+</form>
+
+<script>
+    document.getElementById('human-id').addEventListener('change', function() {
+        var selectedId = this.value;
+        var deleteForm = document.getElementById('delete-form');
+        document.getElementById('delete-human-id').value = selectedId;
+    });
+</script>
