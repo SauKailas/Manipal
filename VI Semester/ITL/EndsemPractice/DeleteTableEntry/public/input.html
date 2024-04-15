@@ -1,0 +1,31 @@
+<h1>Student Details</h1>
+
+<form method="POST" action="add_student">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+</form>
+
+<table style="border-collapse : collapse; border : 1px solid black">
+    <tr>
+        <th style="border : 1px solid black; padding : 8px">Student ID</th>
+        <th style="border : 1px solid black; padding : 8px">Student Name</th>
+        <th style="border : 1px solid black; padding : 8px">Student DOB</th>
+        <th style="border : 1px solid black; padding : 8px">Student Branch</th>
+        <th style="border : 1px solid black; padding : 8px">Delete Student</th>
+    </tr>
+    {% for student in students %}
+        <tr>
+            <td style="border : 1px solid black; padding : 8px">{{student.id}}</td>
+            <td style="border : 1px solid black; padding : 8px">{{student.name}}</td>
+            <td style="border : 1px solid black; padding : 8px">{{student.dob}}</td>
+            <td style="border : 1px solid black; padding : 8px">{{student.branch}}</td> 
+            <td style="border : 1px solid black; padding : 8px">   
+                <form method="POST" action = "{% url 'delete_student' student.id %}">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>   
+            </td>
+        </tr>
+        {% endfor %}
+</table>

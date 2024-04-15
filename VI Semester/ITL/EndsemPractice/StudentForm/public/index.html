@@ -1,0 +1,28 @@
+<h1>Student Details</h1>
+
+<form method="POST" action="update_student">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+
+<table style="border-collapse : collapse; border : 1 px solid black">
+    <tr>
+        <th style="border : 1px solid black; padding : 8px">Student ID</th>
+        <th style="border : 1px solid black; padding : 8px">Student First Name</th>
+        <th style="border : 1px solid black; padding : 8px">Student Last Name</th>
+        <th style="border : 1px solid black; padding : 8px">Date of Birth</th>
+        <th style="border : 1px solid black; padding : 8px">Email</th>
+        <th style="border : 1px solid black; padding : 8px">Branch</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td style="border : 1px solid black; padding : 8px">{{ student.id }}</td>
+        <td style="border : 1px solid black; padding : 8px">{{ student.fname }}</td>
+        <td style="border : 1px solid black; padding : 8px">{{ student.lname }}</td>
+        <td style="border : 1px solid black; padding : 8px">{{ student.dob }}</td>
+        <td style="border : 1px solid black; padding : 8px">{{ student.email }}</td>
+        <td style="border : 1px solid black; padding : 8px">{{ student.branch }}</td>
+    </tr>
+    {% endfor %}
+</table>
