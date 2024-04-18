@@ -1,0 +1,228 @@
+Country	Maximum Cases In A Single Day
+Azerbaijan	1
+('St. Martin',)	2
+Afghanistan	39145
+Albania	12787
+Algeria	50400
+Andorra	1753
+Angola	4363
+Antigua and Barbuda	97
+Argentina	664799
+Armenia	47877
+Aruba	4
+Australia	20105
+Austria	39984
+Azerbaijan	39524
+Bahamas	3618
+Bahamas, The	4
+Bahrain	67014
+Bangladesh	353844
+Barbados	189
+Belarus	76357
+Belgium	106887
+Belize	1706
+Benin	2325
+Bhutan	261
+Bolivia	131990
+Bosnia and Herzegovina	26081
+Botswana	2567
+Brazil	945422
+Brunei	145
+Bulgaria	19283
+Burkina Faso	1929
+Burma	7827
+Burundi	476
+Cabo Verde	5412
+Cambodia	275
+Cameroon	20690
+Canada	69088
+Cape Verde	1
+Cayman Islands	1
+Central African Republic	4802
+Chad	1164
+Channel Islands	1
+Chile	283748
+Colombia	257679
+Comoros	470
+Congo (Brazzaville)	5005
+Congo (Kinshasa)	10537
+Costa Rica	68059
+Croatia	15340
+Cuba	5270
+Curacao	1
+Cyprus	1654
+Czech Republic	55464
+Denmark	24357
+Diamond Princess	712
+Djibouti	5407
+Dominica	24
+Dominican Republic	109737
+East Timor	1
+Ecuador	129892
+Egypt	102375
+El Salvador	27954
+Equatorial Guinea	5018
+Eritrea	364
+Estonia	3033
+Eswatini	5343
+Ethiopia	71083
+Faroe Islands	2
+Fiji	32
+Finland	9288
+France	483956
+French Guiana	18
+Gabon	8716
+Gambia	3542
+Gambia, The	1
+Georgia	4140
+Germany	174098
+Ghana	46153
+Gibraltar	1
+Greece	16286
+Greenland	1
+Grenada	24
+Guadeloupe	53
+Guam	3
+Guatemala	87442
+Guernsey	1
+Guinea	10434
+Guinea-Bissau	2324
+Guyana	2535
+Haiti	8646
+Holy See	12
+Honduras	72675
+Hong Kong	5049
+Hungary	20450
+Iceland	2476
+India	1242770
+Indonesia	257388
+Iran	432798
+Iraq	332635
+Ireland	33675
+Israel	204690
+Italy	222104
+Ivory Coast	19430
+Jamaica	5395
+Japan	24463
+Jersey	2
+Jordan	6042
+Kazakhstan	107529
+Kenya	37348
+Kosovo	12683
+Kuwait	101299
+Kyrgyzstan	45630
+Laos	23
+Latvia	1572
+Lebanon	31792
+Lesotho	1507
+Liberia	1337
+Libya	30097
+Liechtenstein	116
+Lithuania	3932
+Luxembourg	8090
+MS Zaandam	9
+Macau	46
+Madagascar	16167
+Mainland China	68139
+Malawi	5746
+Malaysia	10505
+Maldives	9885
+Mali	3034
+Malta	2856
+Martinique	32
+Mauritania	7425
+Mauritius	367
+Mayotte	7
+Mexico	119866
+Moldova	48232
+Monaco	199
+Mongolia	313
+Montenegro	9428
+Morocco	107743
+Mozambique	7262
+Namibia	10663
+Nepal	67804
+Netherlands	51351
+New Zealand	1827
+Nicaragua	5073
+Niger	1193
+Nigeria	57724
+North Ireland	1
+North Macedonia	17049
+Norway	13277
+Oman	95339
+Others	712
+Pakistan	134845
+Palestine	22
+Panama	107990
+Papua New Guinea	527
+Paraguay	35571
+Peru	356900
+Philippines	294591
+Poland	81673
+Portugal	70465
+Puerto Rico	3
+Qatar	124175
+Republic of Ireland	21
+Republic of the Congo	1
+Reunion	45
+Romania	116415
+Russia	405843
+Rwanda	4779
+Saint Barthelemy	3
+Saint Kitts and Nevis	19
+Saint Lucia	27
+Saint Vincent and the Grenadines	64
+San Marino	735
+Sao Tome and Principe	908
+Saudi Arabia	331359
+Senegal	14795
+Serbia	33080
+Seychelles	143
+Sierra Leone	2183
+Singapore	57639
+Slovakia	7269
+Slovenia	4694
+Somalia	3465
+South Africa	665188
+South Korea	23341
+South Sudan	2664
+Spain	236899
+Sri Lanka	3324
+St. Martin	2
+Sudan	13578
+Suriname	4779
+Sweden	41883
+Switzerland	51101
+Syria	3924
+Taiwan	509
+Tajikistan	9475
+Tanzania	509
+Thailand	3516
+The Bahamas	1
+The Gambia	1
+Timor-Leste	27
+Togo	1701
+Trinidad and Tobago	4136
+Tunisia	12479
+Turkey	308069
+UK	352925
+US	796436
+Uganda	6879
+Ukraine	23672
+United Arab Emirates	87530
+Uruguay	1946
+Uzbekistan	53275
+Vatican City	1
+Venezuela	69439
+Vietnam	1069
+West Bank and Gaza	37083
+Western Sahara	10
+Yemen	2029
+Zambia	14443
+Zimbabwe	7725
+occupied Palestinian territory	25
+
+
+Total Number of Countries : 224
+Total Number of Cases in a Single Day : 13852548
