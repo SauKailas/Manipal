@@ -1,0 +1,3 @@
+MOST FREQUENT AMOUNTS : 
+Amount	Count
+1	700

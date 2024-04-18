@@ -1,6 +1,6 @@
-import pandas as pd
+import pandas as pd 
 
-df = pd.read_csv('heart_disease_data.csv')
+df = pd.read_csv("Datasets/heart_disease_data.csv")
 
 for age in df["age"]:
-    print('%s,,%s' % (age, 1))
+	print('%s,,%s' % (age, 1))

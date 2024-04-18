@@ -1,26 +1,25 @@
-from operator import itemgetter
-import sys
+import sys 
 
-current_word = None
+current_amount = None 
 current_count = 0
-word = None
+amount = None 
 
 for line in sys.stdin:
-    line = line.strip()
-    word, count = line.split(',,', 1)
+	line = line.strip()
+	amount, count = line.split(',,', 1)
 
-    try:
-        count = int(count)
-    except ValueError:
-        continue
+	try:
+		count = int(count)
+	except ValueError:
+		continue
 
-    if current_word == word:
-        current_count += count
-    else:
-        if current_word:
-            print('%s : %s' %(current_word, current_count));
-        current_count = count
-        current_word = word
+	if current_amount == amount:
+		current_count += count 
+	else:
+		if current_amount:
+			print("%s : %s" % (current_amount, current_count))
+		current_amount = amount
+		current_count = count 
 
-if current_word == word:
-    print('%s : %s' %(current_word, current_count));
+if current_amount == amount:
+	print("%s : %s" % (current_amount, current_count))

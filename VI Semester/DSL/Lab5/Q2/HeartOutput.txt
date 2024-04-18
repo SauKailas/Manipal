@@ -1,0 +1,3 @@
+MOST FREQUENT AGES : 
+Age	Count
+58	19

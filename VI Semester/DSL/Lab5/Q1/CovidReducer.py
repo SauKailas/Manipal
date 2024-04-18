@@ -1,26 +1,26 @@
 from operator import itemgetter
-import sys
+import sys 
 
-current_word = None
+current_date = None
 current_count = 0
-word = None
+date = None 
 
 for line in sys.stdin:
-    line = line.strip()
-    word, count = line.split(',,', 1)
+	line = line.strip()
+	date, count = line.split(',,', 1)
 
-    try:
-        count = int(count)
-    except ValueError:
-        continue
+	try:
+		count = int(count)
+	except ValueError:
+		continue
 
-    if current_word == word:
-        current_count += count
-    else:
-        if current_word:
-            print('%s : %s' %(current_word, current_count));
-        current_count = count
-        current_word = word
+	if current_date == date:
+		current_count += count 
+	else:
+		if current_date:
+			print('%s : %s' % (current_date, current_count))
+		current_date = date
+		current_count = count 
 
-if current_word == word:
-    print('%s : %s' %(current_word, current_count));
+if current_date == date:
+	print('%s : %s' % (current_date, current_count))
